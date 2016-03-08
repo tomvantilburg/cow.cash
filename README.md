@@ -10,26 +10,26 @@ Cash is the server component of COW. It is meant to run behind a secure proxy wh
 Running direct
 ---------------
 Run cash with:
-```
-	node cash.js
-```
+	```
+		node cash.js
+	```
 
 Run CASH with forever-service as a global service
 ----------------------------------------
 1. If not previously done, install forever package
 
-```
-	npm install forever-service -g
-```
+	```
+		npm install forever-service -g
+	```
 
 2. Create service for a given client
 
-```
-	sudo forever-service install cash-<myclient> --script /<pathto>/<cash-myclient>.js
-```
+	```
+		sudo forever-service install cash-<myclient> --script /<pathto>/<cash-myclient>.js
+	```
 
 3. Delete service for a given client
 
-```
-	sudo forever-service delete cash-<myclient>
-```
+	```
+		sudo forever-service delete cash-<myclient>
+	```
