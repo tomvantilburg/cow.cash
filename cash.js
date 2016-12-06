@@ -3,13 +3,18 @@
  * full list of contributors). Published under the MIT license.
  * See https://github.com/Geodan/cow/blob/master/LICENSE for the
  * full text of the license. */
+
+configfile = process.argv[2];
+//Enable full path
+config = require(configfile);
+ 
 var fs = require('fs');
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 var app_loaded=false;
-var port = 8081;
+var port = config.port;
 var version = 0.1; //Version number can avoid incompatibilities with data from  older cash servers
-var key = 'test'; //A client can decide wether to connect based on the key, to avoid flooding from other sockets 
+var key = config.key; //A client can decide wether to connect based on the key, to avoid flooding from other sockets 
 
 /** TT:
 Added function to get ip-address so we can sent that back to the clients
